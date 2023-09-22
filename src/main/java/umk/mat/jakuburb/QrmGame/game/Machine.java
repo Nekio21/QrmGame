@@ -17,6 +17,12 @@ public class Machine {
         this.name = name;
         planForMachine = new HashMap<>();
 
+        for(int i=1;i<8;i++){
+            planForMachine.put(DayOfWeek.of(i), new String[]{
+                    "","","","","","","",""
+            });
+        }
+
         przezbronienie = 1;
         szybkosc = 1;
         wadliwosc = 1;

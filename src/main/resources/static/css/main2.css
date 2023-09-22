@@ -82,9 +82,9 @@ body{
 
 .calendarTile:hover{
 	width: 140px;
-	background-color: #EC9A29;
+	background-color: #7D6F86;
 	color: transparent;
-	border-color: #EC9A29;
+	border-color: #7D6F86;
 	
 	transition: width 0.4s, background-color 0.4s;
 }
@@ -188,7 +188,9 @@ body{
 	font-size: 16px;
 	font-weight: 700;
 	text-align: center;
-	
+
+	cursor: pointer;
+
 	transition: width 0.5s, height 0.5s;
 }
 
@@ -309,9 +311,9 @@ body{
 }
 
 .tileMenuBox:hover{
-	background-color: #EC9A29;
+	background-color: #7D6F86;
 	color: #F9F9F9;
-	border-color: #EC9A29;
+	border-color: #7D6F86;
 }
 
 .canvasMenuBox{

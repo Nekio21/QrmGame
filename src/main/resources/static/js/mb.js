@@ -5,9 +5,14 @@ const machine2TMBS = document.getElementById("maszyna2TMB");
 const machine3TMBS = document.getElementById("maszyna3TMB");
 const machine4TMBS = document.getElementById("maszyna4TMB");
 
+const saldoDiv = document.getElementById("saldoInfo");
+const dayDiv = document.getElementById("dayInfo");
+
 function connect(){
     client = Stomp.client("ws:/localhost:8080/drzwi");
     client.connect({}, function (cos){
+        sendInit();
+
         client.subscribe("/mb/informacje", function (message){
             console.log(JSON.parse(message.body));
             doIt(JSON.parse(message.body));
@@ -16,10 +21,30 @@ function connect(){
 }
 
 function sendDay(day){
-    client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "aaaa"}));
+    client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "MACHINE_PLAN", addInfo: day}));
+}
+
+function sendInit(){
+    client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "INIT"}));
 }
 
 function doIt(gift){
+
+    if(gift.kodOdpowiedzi == "MACHINE_PLAN"){
+        machinePlanMethod(gift);
+    }
+    else if(gift.kodOdpowiedzi == "INIT"){
+        initMethod(gift);
+    }
+
+}
+
+function initMethod(gift){
+    saldoDiv.innerHTML = "Saldo: " + gift.saldo + " PLN";
+    dayDiv.innerHTML = "Dzień: " + gift.data;
+}
+
+function machinePlanMethod(gift){
 
     const machine1TMB = machine1TMBS.getElementsByClassName("tileMachineBox");
     const machine2TMB = machine2TMBS.getElementsByClassName("tileMachineBox");
@@ -41,6 +66,8 @@ function doIt(gift){
 
                 if(zmienna == "X"){
                     (tabTMB[i])[j].classList.add("tileMachineBoxBlack");
+                }else if(zmienna == ""){
+
                 }else{
                     (tabTMB[i])[j].classList.add("tileMachineBoxGreen");
                 }
@@ -48,4 +75,5 @@ function doIt(gift){
         }
 
     }
+
 }
