@@ -1,0 +1,413 @@
+*{
+	box-sizing: border-box;
+}
+
+html{
+	margin: 0px;
+	height: 100%;
+}
+
+body{
+	font-family: 'Mukta', sans-serif;
+	background-color: #F9F9F9;
+	color: #22031F;
+	height: 100%;
+	overflow: hidden;
+	
+	/*background-image: url("../assets/background2.png");*/
+}
+
+.boxCenter{
+	width: 80%;
+	max-width: 1200px;
+	height: calc(100% - 60px);
+	
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	position: relative;
+	overflow: hidden;
+}
+
+.topBox{
+	margin-bottom: 30px;
+}
+
+.topBox, .centerBox{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	
+	position: relative;
+	
+	justify-content: space-between;
+	
+	
+	overflow: hidden;
+}
+
+.calendarBox{
+	display: flex;
+	gap: 20px;
+	
+	border-style: solid;
+	border-color: #22031F;
+	border-width: 1px;
+	
+	padding: 20px 70px;
+	
+	background-color: #F9F9F9;
+}
+
+.calendarTile{
+	width: 60px;
+	height: 60px;
+	padding: 15px;
+	
+	font-weight: 900;
+	font-size: 18px;
+	text-align:center;
+	text-align: 100%;
+	
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #22031F;
+	border-width: 1px;
+	
+	cursor: pointer;
+	
+	transition: width 0.3s, background-color 0.3s;
+}
+
+.calendarTile:hover{
+	width: 140px;
+	background-color: #EC9A29;
+	color: transparent;
+	border-color: #EC9A29;
+	
+	transition: width 0.4s, background-color 0.4s;
+}
+
+.calendarTile::before{
+	display:none;
+	content: attr(allName);
+	/*background-color: #22031Fee;
+	box-shadow: 10px 10px #22031;*/
+}
+
+.calendarTile:hover::before {
+  display: block;
+  color: #F9F9F9;
+}
+
+.infoBox{
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-grow: 4;
+	
+	gap: 30px;
+	padding: 20px;
+	
+	background-color: #156064;
+	color: #F9F9F9;
+}
+
+.line{
+	width: 1px;
+	height: 100%;
+	border-color: #F9F9F9;
+	border-style: dashed;
+	border-width: 1px;
+}
+
+.itemInfo{
+	flex-grow: 1;
+	
+	font-size: 18px;
+	font-weight: 200;
+	text-align:center;
+}
+
+.leftBox{
+
+}
+
+.rightBox{
+	display: flex;
+	flex-direction: column;
+	
+	justify-content: center;
+	align-items: center;
+	
+	flex-grow: 2;
+}
+
+.machine{
+	display: flex;
+	gap: 10px;
+	
+	margin-bottom: 25px;
+}
+
+.machine:last-child{
+	margin-bottom: 0px;
+}
+
+.pasek{
+	width: 20px;
+	
+	background-color: #7D6F86;
+}
+
+.textMachine{
+	font-weight: 900;
+	
+	margin-bottom: 10px;
+}
+
+.tilesMachineBox{
+	display:flex;
+	gap: 20px;
+}
+
+.tileMachineBox{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+	border-radius: 15px;
+	border-style: solid;
+	border-color: #000;
+	border-width: 1px;
+	
+	background-color: #F9F9F9;
+
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	
+	transition: width 0.5s, height 0.5s;
+}
+
+.tileMachineBoxBlack{
+    background-color: #22031F;
+    border-color: #22031F;
+    color: #F9F9F9;
+}
+
+.tileMachineBoxBlack:hover{
+    background-color: #22031F77;
+}
+
+.tileMachineBoxGreen{
+     background-color: #156064;
+     border-color: #156064;
+     color: #F9F9F9;
+}
+
+.tileMachineBoxGreen:hover{
+     background-color: #15606477;
+}
+
+.tileMachineBoxNotClicked{
+	width: 75px;
+	height: 75px;
+}
+
+.tileMachineBoxClicked{
+	width: 60px;
+	height: 60px;
+	
+	transition: width 0.5s, height 0.5s;
+}
+
+.submit{
+	display: inline-block;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	font-size: 18px;
+	font-weight: 900;
+	
+	padding: 20px 75px;
+	
+	background-color: #EC9A29;
+	color: #F9F9F9;
+	
+	box-shadow: -15px -15px #22031F;
+	
+	cursor: pointer;
+	
+	position: relative;
+	
+	top: -25px;
+	left: 50px;
+}
+
+.submit:hover{
+	background-color: #FCAA39;
+}
+
+.menuBox{
+	display: flex;
+	gap: 30px;
+	
+	justify-content: center;
+	align-items: center;
+	
+	width: 80%;
+	
+	flex-grow: 5;
+}
+
+.menuCenterBox{	
+	min-width: 400px;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	justify-content: center;
+	align-items: center;
+	
+	gap: 30px;
+	
+	position:relative;
+}
+
+.tileMenuBox{
+	display: flex;
+	flex-direction: column;
+	
+	width: 120px;
+	height: 120px;
+	
+	justify-content: center;
+	align-items: center;
+	
+	background-color: #F9F9F9;
+	
+	border-radius: 15px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #22031F;
+	
+	cursor: pointer;
+}
+
+.tileMenuBox span{
+	font-size: 48px;
+	font-weight: 900;
+	
+}
+
+.tileMenuBox:nth-child(1){
+	margin-bottom: 30px;
+}
+
+.tileMenuBox:hover{
+	background-color: #EC9A29;
+	color: #F9F9F9;
+	border-color: #EC9A29;
+}
+
+.canvasMenuBox{
+	width: 210px;
+	height: 210px;
+	
+	position: absolute;
+	
+	z-index: -1;
+	
+	background-color: #22031F;
+}
+
+.resources{
+	height: 100%;
+	width: 510px;
+	
+	background-color: #22031F;
+	color: #F9F9F9;
+	
+	padding: 40px;
+	
+	position: absolute;
+	
+	z-index: 2;
+}
+
+*:focus{
+	outline: none;
+}
+
+.resources input{
+	width: 100%;
+	
+	background-color: transparent;
+	color: #F9F9F977;
+	
+	margin-top: 10px;
+	
+	padding: 10px;
+	
+	border: none;
+	border-bottom-color: #F9F9F9;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	
+	transition: right 0.5s;
+}
+
+.resourcesNotClicked{
+	right: -900px;
+	top: 0px;
+	transition: right 0.5s;
+}
+
+.resourcesClicked{
+	transition: right 1s;
+	right: 0px;
+}
+
+.resourcesHeader{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	
+	font-size: 36px;
+	letter-spacing: 7px;
+}
+
+.resourcesHeader span{
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.resourcesContent{
+	width: 100%;
+	height: 80%;
+	
+	margin-top: 20px;
+
+	overflow-y: scroll;
+}
+
+.resourcesContentElement{
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	gap: 20px;
+	
+	margin-bottom: 30px;
+}
+
+.brick{
+	font-size: 18px;
+	padding:5px;
+	background-color: #7D6F8611;
+}

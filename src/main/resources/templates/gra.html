@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NekioWeb</title>
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;600;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/main2.css"/>
+</head>
+<body onload="connect()">
+	<div class="boxCenter">
+		
+	<div class="topBox">
+		<div class="calendarBox">
+			<div class="calendarTile" onclick="sendDay('poniedzialek')" allName="Poniedziałek">PN</div>
+			<div class="calendarTile" onclick="sendDay('Wtorek')" 		allName="Wtorek">WT</div>
+			<div class="calendarTile" onclick="sendDay('Środa')" 		allName="Środa">ŚR</div>
+			<div class="calendarTile" onclick="sendDay('Czwartek')" 	allName="Czwartek">CZ</div>
+			<div class="calendarTile" onclick="sendDay('Piątek')" 		allName="Piątek">PT</div>
+			<div class="calendarTile" onclick="sendDay('Sobota')" 		allName="Sobota">SO</div>
+			<div class="calendarTile" onclick="sendDay('Niedziela')" 	allName="Niedziela">ND</div>
+		</div>
+		<div class="infoBox" id="">
+			<div class="itemInfo">Saldo: 2000000 PLN</div>
+			<div class="line"></div>
+			<div class="itemInfo">Dzień: 12.03.2023</div>
+		</div>
+	</div>
+	
+	<div class="centerBox">
+		<div class="leftBox">
+		
+			<div class="machine" id="maszyna1">
+				<div class="pasek"></div>
+				<div>
+					<div class="textMachine">Maszyna A</div>
+					<div class="tilesMachineBox" id="maszyna1TMB">
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="machine" id="maszyna2">
+				<div class="pasek"></div>
+				<div>
+					<div class="textMachine">Maszyna A</div>
+					<div class="tilesMachineBox" id="maszyna2TMB">
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="machine" id="maszyna3">
+				<div class="pasek"></div>
+				<div>
+					<div class="textMachine">Maszyna A</div>
+					<div class="tilesMachineBox" id="maszyna3TMB">
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="machine" id="maszyna4">
+				<div class="pasek"></div>
+				<div>
+					<div class="textMachine">Maszyna A</div>
+					<div class="tilesMachineBox" id="maszyna4TMB">
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+						<div class="tileMachineBox tileMachineBoxNotClicked"></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="rightBox">
+		
+			<div class="menuBox">
+				<div class="menuCenterBox">
+					<div class="columMenuCenterBox">
+						<div class="tileMenuBox" onClick="clickResourcesButton()">
+							<span class="material-symbols-outlined">
+								warehouse
+							</span>
+							Zasoby
+						</div>
+						<div class="tileMenuBox">
+							<span class="material-symbols-outlined">
+								precision_manufacturing
+							</span>
+							Maszyny
+						</div>
+					</div>
+					<div class="columMenuCenterBox">
+						<div class="tileMenuBox">
+							<span class="material-symbols-outlined">
+								contract
+							</span>
+							Zlecenia
+						</div>
+						<div class="tileMenuBox">
+							<span class="material-symbols-outlined">
+								payments
+							</span>
+							Koszty
+						</div>
+					</div>
+					
+					<div class="canvasMenuBox"></div>
+				</div>
+			</div>
+			
+			<div class="submit">
+				Następna tura
+			</div>
+		
+		</div>
+	</div>
+		
+		<div class="resources resourcesNotClicked" id="resourcesID">
+		<div class="resourcesHeader">
+			<div>Zasoby</div>
+			<span class="material-symbols-outlined" onClick="clickResourcesButton()">
+				close
+			</span>
+		</div>
+		
+		<!--<input type="text" placeholder="Wyszukaj tutaj zasobów"/> -->
+	
+		<div class="resourcesContent">
+			<div class="resourcesContentElement">
+				<div class="brick">A: 10</div>
+				<div class="brick">B: 123</div>
+				<div class="brick">C: 33</div>
+				<div class="brick">D: 0</div>
+			</div>
+			<div class="resourcesContentElement">
+				<div class="brick">AB: 1200</div>
+				<div class="brick">AC: 32</div>
+				<div class="brick">AD: 432</div>
+				<div class="brick">BA: 3</div>
+				<div class="brick">BC: 0</div>
+				<div class="brick">BD: 0</div>
+				<div class="brick">CA: 44</div>
+				<div class="brick">CB: 234</div>
+				<div class="brick">CD: 42</div>
+				<div class="brick">DA: 765</div>
+				<div class="brick">DB: 75</div>
+				<div class="brick">DC: 44</div>
+			</div>
+			<div class="resourcesContentElement">
+				<div class="brick">ABC: 12</div>
+				<div class="brick">ABD: 12</div>
+				<div class="brick">ACB: 12</div>
+				<div class="brick">ACD: 12</div>
+				<div class="brick">ADB: 12</div>
+				<div class="brick">ADC: 12</div>
+				
+				<div class="brick">BAC: 12</div>
+				<div class="brick">BAD: 12</div>
+				<div class="brick">BCA: 12</div>
+				<div class="brick">BCD: 12</div>
+				<div class="brick">BDA: 12</div>
+				<div class="brick">BDC: 12</div>
+				
+				<div class="brick">CAB: 12</div>
+				<div class="brick">CAD: 12</div>
+				<div class="brick">CBA: 12</div>
+				<div class="brick">CBD: 12</div>
+				<div class="brick">CDA: 12</div>
+				<div class="brick">CDB: 12</div>
+				
+				<div class="brick">DAB: 12</div>
+				<div class="brick">DAC: 12</div>
+				<div class="brick">DBA: 12</div>
+				<div class="brick">DBC: 12</div>
+				<div class="brick">DCA: 12</div>
+				<div class="brick">DCB: 12</div>
+			</div>
+			<div class="resourcesContentElement">
+				<div class="brick">ABCD: 12</div>
+				<div class="brick">ABDC: 12</div>
+				<div class="brick">ACBD: 12</div>
+				<div class="brick">ACDB: 12</div>
+				<div class="brick">ADBC: 12</div>
+				<div class="brick">ADCB: 12</div>
+				
+				<div class="brick">BACD: 12</div>
+				<div class="brick">BADC: 12</div>
+				<div class="brick">BCAD: 12</div>
+				<div class="brick">BCDA: 12</div>
+				<div class="brick">BDAC: 12</div>
+				<div class="brick">BDCA: 12</div>
+				
+				<div class="brick">CBAD: 12</div>
+				<div class="brick">CBDA: 12</div>
+				<div class="brick">CABD: 12</div>
+				<div class="brick">CADB: 12</div>
+				<div class="brick">CDBA: 12</div>
+				<div class="brick">CDAB: 12</div>
+				
+				<div class="brick">DBCA: 12</div>
+				<div class="brick">DBAC: 12</div>
+				<div class="brick">DCBA: 12</div>
+				<div class="brick">DCAB: 12</div>
+				<div class="brick">DABC: 12</div>
+				<div class="brick">DACB: 12</div>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+	<script src="../js/stomp.js"></script>
+	<script src="../js/gra.js"></script>
+	<script src="../js/mb.js"></script>
+</body>
+</html>
