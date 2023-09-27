@@ -80,6 +80,12 @@ body{
 	transition: width 0.3s, background-color 0.3s;
 }
 
+.calendarTileChoose{
+    background-color: #EC9A29 !important;
+    color: #F9F9F9;
+    border-color: #EC9A29 !important;
+}
+
 .calendarTile:hover{
 	width: 140px;
 	background-color: #7D6F86;
@@ -195,13 +201,13 @@ body{
 }
 
 .tileMachineBoxBlack{
-    background-color: #22031F;
-    border-color: #22031F;
+    background-color: #7D6F86;
+    border-color: #7D6F86;
     color: #F9F9F9;
 }
 
 .tileMachineBoxBlack:hover{
-    background-color: #22031F77;
+    background-color: #7D6F8677;
 }
 
 .tileMachineBoxGreen{
@@ -283,10 +289,12 @@ body{
 .tileMenuBox{
 	display: flex;
 	flex-direction: column;
-	
+
 	width: 120px;
 	height: 120px;
-	
+
+	font-family: 'Black Ops One', cursive;
+
 	justify-content: center;
 	align-items: center;
 	
@@ -314,6 +322,11 @@ body{
 	background-color: #7D6F86;
 	color: #F9F9F9;
 	border-color: #7D6F86;
+}
+
+.tileMenuBoxChosen{
+    border-width: 5px;
+    border-color: #22031F !important;
 }
 
 .canvasMenuBox{
@@ -395,6 +408,7 @@ body{
 	height: 80%;
 	
 	margin-top: 20px;
+    padding-right: 10px;
 
 	overflow-y: scroll;
 }
@@ -410,6 +424,28 @@ body{
 
 .brick{
 	font-size: 18px;
-	padding:5px;
+	padding:5px 10px;
 	background-color: #7D6F8611;
+	transition: 0.7s background-color;
+}
+
+.brickClickable{
+    cursor: pointer;
+    background-color: #7D6F8644;
+    transition: 0.3s background-color;
+}
+
+.brickClickable:hover{
+    background-color: #7D6F8666;
+
+}
+
+.machineCenter{
+    background-color: #222;
+    height: 100%;
+}
+
+.machineDown{
+    height: 200px;
+    background-color: #888;
 }

@@ -8,7 +8,11 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-	
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;600;800&display=swap" rel="stylesheet">
@@ -19,13 +23,13 @@
 		
 	<div class="topBox">
 		<div class="calendarBox">
-			<div class="calendarTile" onclick="sendDay('1')" allName="Poniedziałek">PN</div>
-			<div class="calendarTile" onclick="sendDay('2')" allName="Wtorek">WT</div>
-			<div class="calendarTile" onclick="sendDay('3')" allName="Środa">ŚR</div>
-			<div class="calendarTile" onclick="sendDay('4')" allName="Czwartek">CZ</div>
-			<div class="calendarTile" onclick="sendDay('5')" allName="Piątek">PT</div>
-			<div class="calendarTile" onclick="sendDay('6')" allName="Sobota">SO</div>
-			<div class="calendarTile" onclick="sendDay('7')" allName="Niedziela">ND</div>
+			<div class="calendarTile calendarTileChoose" onclick="sendDay('1', this)" allName="Poniedziałek">PN</div>
+			<div class="calendarTile" onclick="sendDay('2', this)" allName="Wtorek">WT</div>
+			<div class="calendarTile" onclick="sendDay('3', this)" allName="Środa">ŚR</div>
+			<div class="calendarTile" onclick="sendDay('4', this)" allName="Czwartek">CZ</div>
+			<div class="calendarTile" onclick="sendDay('5', this)" allName="Piątek">PT</div>
+			<div class="calendarTile" onclick="sendDay('6', this)" allName="Sobota">SO</div>
+			<div class="calendarTile" onclick="sendDay('7', this)" allName="Niedziela">ND</div>
 		</div>
 		<div class="infoBox" id="">
 			<div class="itemInfo" id="saldoInfo">Saldo: 2000000 PLN</div>
@@ -117,7 +121,7 @@
 							</span>
 							Zasoby
 						</div>
-						<div class="tileMenuBox">
+						<div class="tileMenuBox" onClick="clickMachineButton()">
 							<span class="material-symbols-outlined">
 								precision_manufacturing
 							</span>
@@ -149,8 +153,8 @@
 		
 		</div>
 	</div>
-		
-		<div class="resources resourcesNotClicked" id="resourcesID">
+
+	<div class="resources resourcesNotClicked" id="resourcesID">
 		<div class="resourcesHeader">
 			<div>Zasoby</div>
 			<span class="material-symbols-outlined" onClick="clickResourcesButton()">
@@ -162,87 +166,109 @@
 	
 		<div class="resourcesContent">
 			<div class="resourcesContentElement">
-				<div class="brick">A: 10</div>
-				<div class="brick">B: 123</div>
-				<div class="brick">C: 33</div>
-				<div class="brick">D: 0</div>
+				<div class="brick" data-letters="A">A: 10</div>
+				<div class="brick" data-letters="B">B: 123</div>
+				<div class="brick" data-letters="C">C: 33</div>
+				<div class="brick" data-letters="D">D: 0</div>
 			</div>
 			<div class="resourcesContentElement">
-				<div class="brick">AB: 1200</div>
-				<div class="brick">AC: 32</div>
-				<div class="brick">AD: 432</div>
-				<div class="brick">BA: 3</div>
-				<div class="brick">BC: 0</div>
-				<div class="brick">BD: 0</div>
-				<div class="brick">CA: 44</div>
-				<div class="brick">CB: 234</div>
-				<div class="brick">CD: 42</div>
-				<div class="brick">DA: 765</div>
-				<div class="brick">DB: 75</div>
-				<div class="brick">DC: 44</div>
+				<div class="brick" data-letters="AB">AB: 1200</div>
+				<div class="brick" data-letters="AC">AC: 32</div>
+				<div class="brick" data-letters="AD">AD: 432</div>
+				<div class="brick" data-letters="BA">BA: 3</div>
+				<div class="brick" data-letters="BC">BC: 0</div>
+				<div class="brick" data-letters="BD">BD: 0</div>
+				<div class="brick" data-letters="CA">CA: 44</div>
+				<div class="brick" data-letters="CB">CB: 234</div>
+				<div class="brick" data-letters="CD">CD: 42</div>
+				<div class="brick" data-letters="DA">DA: 765</div>
+				<div class="brick" data-letters="DB">DB 75</div>
+				<div class="brick" data-letters="DC">DC: 44</div>
 			</div>
 			<div class="resourcesContentElement">
-				<div class="brick">ABC: 12</div>
-				<div class="brick">ABD: 12</div>
-				<div class="brick">ACB: 12</div>
-				<div class="brick">ACD: 12</div>
-				<div class="brick">ADB: 12</div>
-				<div class="brick">ADC: 12</div>
-				
-				<div class="brick">BAC: 12</div>
-				<div class="brick">BAD: 12</div>
-				<div class="brick">BCA: 12</div>
-				<div class="brick">BCD: 12</div>
-				<div class="brick">BDA: 12</div>
-				<div class="brick">BDC: 12</div>
-				
-				<div class="brick">CAB: 12</div>
-				<div class="brick">CAD: 12</div>
-				<div class="brick">CBA: 12</div>
-				<div class="brick">CBD: 12</div>
-				<div class="brick">CDA: 12</div>
-				<div class="brick">CDB: 12</div>
-				
-				<div class="brick">DAB: 12</div>
-				<div class="brick">DAC: 12</div>
-				<div class="brick">DBA: 12</div>
-				<div class="brick">DBC: 12</div>
-				<div class="brick">DCA: 12</div>
-				<div class="brick">DCB: 12</div>
+				<div class="brick" data-letters="ABC">ABC: 12</div>
+				<div class="brick" data-letters="ABD">ABD: 12</div>
+				<div class="brick" data-letters="ACB">ACB: 12</div>
+				<div class="brick" data-letters="ACD">ACD: 12</div>
+				<div class="brick" data-letters="ADB">ADB: 12</div>
+				<div class="brick" data-letters="ADC">ADC: 12</div>
+
+				<div class="brick" data-letters="BAC">BAC: 12</div>
+				<div class="brick" data-letters="BAD">BAD: 12</div>
+				<div class="brick" data-letters="BCA">BCA: 12</div>
+				<div class="brick" data-letters="BCD">BCD: 12</div>
+				<div class="brick" data-letters="BDA">BDA: 12</div>
+				<div class="brick" data-letters="BDC">BDC: 12</div>
+
+				<div class="brick" data-letters="CAB">CAB: 12</div>
+				<div class="brick" data-letters="CAD">CAD: 12</div>
+				<div class="brick" data-letters="CBA">CBA: 12</div>
+				<div class="brick" data-letters="CBD">CBD: 12</div>
+				<div class="brick" data-letters="CDA">CDA: 12</div>
+				<div class="brick" data-letters="CDB">CDB: 12</div>
+
+				<div class="brick" data-letters="DAB">DAB: 12</div>
+				<div class="brick" data-letters="DAC">DAC: 12</div>
+				<div class="brick" data-letters="DBA">DBA: 12</div>
+				<div class="brick" data-letters="DBC">DBC: 12</div>
+				<div class="brick" data-letters="DCA">DCA: 12</div>
+				<div class="brick" data-letters="DCB">DCB: 12</div>
 			</div>
 			<div class="resourcesContentElement">
-				<div class="brick">ABCD: 12</div>
-				<div class="brick">ABDC: 12</div>
-				<div class="brick">ACBD: 12</div>
-				<div class="brick">ACDB: 12</div>
-				<div class="brick">ADBC: 12</div>
-				<div class="brick">ADCB: 12</div>
-				
-				<div class="brick">BACD: 12</div>
-				<div class="brick">BADC: 12</div>
-				<div class="brick">BCAD: 12</div>
-				<div class="brick">BCDA: 12</div>
-				<div class="brick">BDAC: 12</div>
-				<div class="brick">BDCA: 12</div>
-				
-				<div class="brick">CBAD: 12</div>
-				<div class="brick">CBDA: 12</div>
-				<div class="brick">CABD: 12</div>
-				<div class="brick">CADB: 12</div>
-				<div class="brick">CDBA: 12</div>
-				<div class="brick">CDAB: 12</div>
-				
-				<div class="brick">DBCA: 12</div>
-				<div class="brick">DBAC: 12</div>
-				<div class="brick">DCBA: 12</div>
-				<div class="brick">DCAB: 12</div>
-				<div class="brick">DABC: 12</div>
-				<div class="brick">DACB: 12</div>
+				<div class="brick" data-letters="ABCD">ABCD: 12</div>
+				<div class="brick" data-letters="ABDC">ABDC: 12</div>
+				<div class="brick" data-letters="ACBD">ACBD: 12</div>
+				<div class="brick" data-letters="ACDB">ACDB: 12</div>
+				<div class="brick" data-letters="ADBC">ADBC: 12</div>
+				<div class="brick" data-letters="ADCB">ADCB: 12</div>
+
+				<div class="brick" data-letters="BACD">BACD: 12</div>
+				<div class="brick" data-letters="BADC">BADC: 12</div>
+				<div class="brick" data-letters="BCAD">BCAD: 12</div>
+				<div class="brick" data-letters="BCDA">BCDA: 12</div>
+				<div class="brick" data-letters="BDAC">BDAC: 12</div>
+				<div class="brick" data-letters="BDCA">BDCA: 12</div>
+
+				<div class="brick" data-letters="CBAD">CBAD: 12</div>
+				<div class="brick" data-letters="CBDA">CBDA: 12</div>
+				<div class="brick" data-letters="CABD">CABD: 12</div>
+				<div class="brick" data-letters="CADB">CADB: 12</div>
+				<div class="brick" data-letters="CDBA">CDBA: 12</div>
+				<div class="brick" data-letters="CDAB">CDAB: 12</div>
+
+				<div class="brick" data-letters="DBCA">DBCA: 12</div>
+				<div class="brick" data-letters="DBAC">DBAC: 12</div>
+				<div class="brick" data-letters="DCBA">DCBA: 12</div>
+				<div class="brick" data-letters="DCAB">DCAB: 12</div>
+				<div class="brick" data-letters="DABC">DABC: 12</div>
+				<div class="brick" data-letters="DACB">DACB: 12</div>
 			</div>
 		</div>
 	</div>
-	
+
+	<div class="resources resourcesNotClicked" id="machineID">
+		<div class="resourcesHeader">
+			<div>Maszyny</div>
+			<span class="material-symbols-outlined" onClick="clickMachineButton()">
+				close
+			</span>
+		</div>
+
+		<div class="machineCenter">
+
+
+		</div>
+
+		<div class="machineDown">
+
+
+
+		</div>
+
 	</div>
+
+	</div>
+
 	<script src="../js/stomp.js"></script>
 	<script src="../js/gra.js"></script>
 	<script src="../js/mb.js"></script>

@@ -8,6 +8,9 @@ const machine4TMBS = document.getElementById("maszyna4TMB");
 const saldoDiv = document.getElementById("saldoInfo");
 const dayDiv = document.getElementById("dayInfo");
 
+
+let dayNumber = 1;
+
 function connect(){
     client = Stomp.client("ws:/localhost:8080/drzwi");
     client.connect({}, function (cos){
@@ -20,12 +23,43 @@ function connect(){
     });
 }
 
-function sendDay(day){
+function sendDay(day, ct){
+    dayNumber = day;
+    let dayElements = document.getElementsByClassName("calendarTile");
+    for(let i=0; i<dayElements.length; i++){
+        dayElements[i].classList.remove("calendarTileChoose");
+    }
+
+    ct.classList.add("calendarTileChoose");
+
     client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "MACHINE_PLAN", addInfo: day}));
+}
+
+function sendGiveMeMagazineInfo(){
+     client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "give", order: "MAGAZINE"}));
 }
 
 function sendInit(){
     client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "INIT"}));
+}
+
+function sendCheck(){
+    client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "CHECK"}));
+}
+
+function sendChangeMachinePlan(machineNumber, start, end, letters){
+    client.send("/app/drzwi",{}, JSON.stringify({
+        giveOrTake: "give",
+        order:"MACHINE_PLAN",
+        addInfoList:"",
+        machinePlanChange: {
+            machineNumber: machineNumber,
+            start: start,
+            end: end,
+            letters: letters,
+            nrOfDay: dayNumber
+        }
+      }));
 }
 
 function doIt(gift){
@@ -35,6 +69,10 @@ function doIt(gift){
     }
     else if(gift.kodOdpowiedzi == "INIT"){
         initMethod(gift);
+    }
+    else if(gift.kodOdpowiedzi == "MAGAZINE"){
+        console.log("witam");
+        magazineUpdate(gift);
     }
 
 }
@@ -77,3 +115,30 @@ function machinePlanMethod(gift){
     }
 
 }
+
+function magazineUpdate(gift){
+
+    for(let i=0; i<bricks.length; i++){
+        let value = gift.map[bricks[i].dataset.letters];
+
+        if(value == null){
+            value = 0;
+        }
+
+        bricks[i].innerHTML = bricks[i].dataset.letters + ": " + value;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

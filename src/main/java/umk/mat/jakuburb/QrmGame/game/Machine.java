@@ -23,7 +23,7 @@ public class Machine {
             });
         }
 
-        przezbronienie = 1;
+        przezbronienie = 2;
         szybkosc = 1;
         wadliwosc = 1;
     }

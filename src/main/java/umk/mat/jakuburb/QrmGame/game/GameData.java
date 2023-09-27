@@ -33,18 +33,6 @@ public class GameData {
         machines.add(new Machine("Maszyna C"));
         machines.add(new Machine("Maszyna D"));
 
-        String[] randomText = {"X", "ABC","AC", "BD", "ABCD", "DCA", "ADC", "DBAC", "DCBA"};
-
-        Random random = new Random();
-
-        for(Machine m: machines){
-            for(int j=1;j<8;j++) {
-                for (int i = 0; i < 8; i++) {
-                    m.getPlanForMachine().get(DayOfWeek.of(j))[i] = randomText[random.nextInt(9)];
-                }
-            }
-        }
-
         saldo = new BigDecimal(2_000_000);
         nrTura = 1;
     }
