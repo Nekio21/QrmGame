@@ -23,13 +23,13 @@
 		
 	<div class="topBox">
 		<div class="calendarBox">
-			<div class="calendarTile calendarTileChoose" onclick="sendDay('1', this)" allName="Poniedziałek">PN</div>
-			<div class="calendarTile" onclick="sendDay('2', this)" allName="Wtorek">WT</div>
-			<div class="calendarTile" onclick="sendDay('3', this)" allName="Środa">ŚR</div>
-			<div class="calendarTile" onclick="sendDay('4', this)" allName="Czwartek">CZ</div>
-			<div class="calendarTile" onclick="sendDay('5', this)" allName="Piątek">PT</div>
-			<div class="calendarTile" onclick="sendDay('6', this)" allName="Sobota">SO</div>
-			<div class="calendarTile" onclick="sendDay('7', this)" allName="Niedziela">ND</div>
+			<div class="calendarTile" onclick="sendDay(this)" data-order=0 allName="Poniedziałek" id="day1">PN</div>
+			<div class="calendarTile" onclick="sendDay(this)" data-order=0 allName="Wtorek" id="day2">WT</div>
+			<div class="calendarTile" onclick="sendDay(this)" data-order=0 allName="Środa" id="day3">ŚR</div>
+			<div class="calendarTile" onclick="sendDay(this)" data-order=0 allName="Czwartek" id="day4">CZ</div>
+			<div class="calendarTile" onclick="sendDay(this)" data-order=0 allName="Piątek" id="day5">PT</div>
+			<div class="calendarTile" onclick="sendDay(this)" data-order=0 allName="Sobota" id="day6">SO</div>
+			<div class="calendarTile" onclick="sendDay(this)" data-order=0 allName="Niedziela" id="day7">ND</div>
 		</div>
 		<div class="infoBox" id="">
 			<div class="itemInfo" id="saldoInfo">Saldo: 2000000 PLN</div>
@@ -147,7 +147,7 @@
 				</div>
 			</div>
 			
-			<div class="submit">
+			<div class="submit" onclick="sendCheck()">
 				Następna tura
 			</div>
 		

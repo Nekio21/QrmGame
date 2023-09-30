@@ -8,8 +8,7 @@ const machine4TMBS = document.getElementById("maszyna4TMB");
 const saldoDiv = document.getElementById("saldoInfo");
 const dayDiv = document.getElementById("dayInfo");
 
-
-let dayNumber = 1;
+let dayFromStart = 0;
 
 function connect(){
     client = Stomp.client("ws:/localhost:8080/drzwi");
@@ -23,8 +22,8 @@ function connect(){
     });
 }
 
-function sendDay(day, ct){
-    dayNumber = day;
+function sendDay(ct){
+    dayFromStart = ct.dataset.order-1;
     let dayElements = document.getElementsByClassName("calendarTile");
     for(let i=0; i<dayElements.length; i++){
         dayElements[i].classList.remove("calendarTileChoose");
@@ -32,7 +31,7 @@ function sendDay(day, ct){
 
     ct.classList.add("calendarTileChoose");
 
-    client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "MACHINE_PLAN", addInfo: day}));
+    client.send("/app/drzwi", {}, JSON.stringify({giveOrTake: "take", order: "MACHINE_PLAN", addInfo: dayFromStart}));
 }
 
 function sendGiveMeMagazineInfo(){
@@ -57,7 +56,7 @@ function sendChangeMachinePlan(machineNumber, start, end, letters){
             start: start,
             end: end,
             letters: letters,
-            nrOfDay: dayNumber
+            nrOfDay: dayFromStart
         }
       }));
 }
@@ -78,6 +77,20 @@ function doIt(gift){
 }
 
 function initMethod(gift){
+
+    for(let i=-1;i<6;i++){
+        var dzionek = (gift.day + i)%7 + 1;
+
+        var calendarTile = document.getElementById("day" + dzionek);
+
+        if(i == -1){
+            calendarTile.classList.add("calendarTileChoose");
+        }
+
+        calendarTile.style.order = i+2;
+        calendarTile.dataset.order = i+2;
+    }
+
     saldoDiv.innerHTML = "Saldo: " + gift.saldo + " PLN";
     dayDiv.innerHTML = "Dzień: " + gift.data;
 }

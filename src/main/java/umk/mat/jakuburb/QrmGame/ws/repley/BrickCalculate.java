@@ -61,6 +61,6 @@ public class BrickCalculate {
     }
 }
 
-enum State{
-    ACCEPTANCE, OBJECTION
+enum State {
+    ACCEPTANCE, OBJECTION, X, NOTHING
 }

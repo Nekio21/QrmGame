@@ -76,7 +76,7 @@ body{
 	border-width: 1px;
 	
 	cursor: pointer;
-	
+
 	transition: width 0.3s, background-color 0.3s;
 }
 

@@ -5,17 +5,17 @@ public class BricksClass {
     private int start;
     private int end;
     private String letters;
-    private int nrOfDay;
+    private int HowManyDayBetweenTheDayAndChoseDay;
 
     public BricksClass() {
     }
 
-    public BricksClass(int machineNumber, int start, int end, String letters, int nrOfDay) {
+    public BricksClass(int machineNumber, int start, int end, String letters, int HowManyDayBetweenTheDayAndChoseDay) {
         this.machineNumber = machineNumber;
         this.start = start;
         this.end = end;
         this.letters = letters;
-        this.nrOfDay = nrOfDay;
+        this.HowManyDayBetweenTheDayAndChoseDay = HowManyDayBetweenTheDayAndChoseDay;
     }
 
     public int getMachineNumber() {
@@ -50,11 +50,11 @@ public class BricksClass {
         this.letters = letters;
     }
 
-    public int getNrOfDay() {
-        return nrOfDay;
+    public int getHowManyDayBetweenTheDayAndChoseDay() {
+        return HowManyDayBetweenTheDayAndChoseDay;
     }
 
-    public void setNrOfDay(int nrOfDay) {
-        this.nrOfDay = nrOfDay;
+    public void setNrOfDay(int HowManyDayBetweenTheDayAndChoseDay) {
+        this.HowManyDayBetweenTheDayAndChoseDay = HowManyDayBetweenTheDayAndChoseDay;
     }
 }
